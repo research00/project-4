@@ -7,23 +7,24 @@ public class Heap211 {
         heap.add(0); // explain why we need add(0)
     }
 
+
     int parent(int index) {
-        return . . .;
+        return index/2;
     }
     int leftChild(int index) {
-        return . . .;
+        return index*2;
     }
     int rightChild(int index) {
-        return . . .;
+        return index*2 + 1;
     }
     boolean hasParent(int index) {
-        return . . .;
+        return index > 0;
     }
     boolean hasLeftChild(int index) {
-        return . . .;
+        return index*2 < heap.size();
     }
     boolean hasRightChild(int index) {
-        return . . .;
+        return index*2 + 1 < heap.size();
     }
     void swap(int a, int b) {
         int temp = heap.get(a);
@@ -32,47 +33,48 @@ public class Heap211 {
     }
 
     int peekMin() {
-        return . . .;
+        return heap.get(1);
     }
 
     boolean isEmpty() {
         return heap.size() == 1;
     }
     void add(int value) {
-// CP 16
-/*
-heap.. . .; // add as rightmost leaf
-*/
+        int index = heap.size();
+        heap.add(value);
         System.out.println(" heap: " +printHeap());
         System.out.println(" bubble-up: start");
-// proj 4
-/*
-bubble-up here
-*/
+
+        if(hasParent(value)) {
+            if(parent(index) < heap.get(index)) {
+                swap(parent(index), heap.get(index));
+            }
+        }
+
         System.out.println(" bubble-up: end");
         System.out.println(" new heap: " +printHeap());
     }
-    int remove() {
-        System.out.println(" heap: " +printHeap());
-// CP 16
-/*
-int min = . . .; // peek min value by calling peekMin()
-heap.set(.. , ...); // move the last node to the first. tip: use one of the
-ArrayList methods
-System.out.println(" Removed: " + min);
-heap.remove(. . .); // delete the last node from the heap. The heap is
-reduced.
-*/
-        System.out.println(" heap: " +printHeap());
-        System.out.println(" bubble-down: start");
-// proj 4
-/*
-bubble-down here
-*/
-        System.out.println(" bubble-down: end");
-        System.out.println(" new heap: " +printHeap());
-        return min;
-    }
+//    int remove() {
+//        System.out.println(" heap: " +printHeap());
+//// CP 16
+///*
+//int min = . . .; // peek min value by calling peekMin()
+//heap.set(.. , ...); // move the last node to the first. tip: use one of the
+//ArrayList methods
+//System.out.println(" Removed: " + min);
+//heap.remove(. . .); // delete the last node from the heap. The heap is
+//reduced.
+//*/
+//        System.out.println(" heap: " +printHeap());
+//        System.out.println(" bubble-down: start");
+//// proj 4
+///*
+//bubble-down here
+//*/
+//        System.out.println(" bubble-down: end");
+//        System.out.println(" new heap: " +printHeap());
+//        return min;
+//    }
     //use this method as is
     public String printHeap(){
         StringBuilder result = new StringBuilder("[");
