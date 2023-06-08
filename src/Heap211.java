@@ -45,36 +45,35 @@ public class Heap211 {
         System.out.println(" heap: " +printHeap());
         System.out.println(" bubble-up: start");
 
-        if(hasParent(value)) {
-            if(parent(index) < heap.get(index)) {
-                swap(parent(index), heap.get(index));
-            }
-        }
+//        while(hasParent(value)) {
+//            if(parent(index) < heap.get(index)) {
+//                swap(heap.get(index), heap.get(parent(index)));
+//                index = parent(index);
+//            }
+//        }
 
         System.out.println(" bubble-up: end");
         System.out.println(" new heap: " +printHeap());
     }
-//    int remove() {
-//        System.out.println(" heap: " +printHeap());
-//// CP 16
-///*
-//int min = . . .; // peek min value by calling peekMin()
-//heap.set(.. , ...); // move the last node to the first. tip: use one of the
-//ArrayList methods
-//System.out.println(" Removed: " + min);
-//heap.remove(. . .); // delete the last node from the heap. The heap is
-//reduced.
-//*/
-//        System.out.println(" heap: " +printHeap());
-//        System.out.println(" bubble-down: start");
-//// proj 4
-///*
-//bubble-down here
-//*/
-//        System.out.println(" bubble-down: end");
-//        System.out.println(" new heap: " +printHeap());
-//        return min;
-//    }
+    int remove() {
+        System.out.println(" heap: " +printHeap());
+// CP 16
+
+        int min = peekMin(); // peek min value by calling peekMin()
+        heap.set(1 , heap.get(heap.size() - 1)); // move the last node to the first. tip: use one of the ArrayList methods
+        System.out.println(" Removed: " + min);
+        heap.remove(heap.size() - 1); // delete the last node from the heap. The heap is reduced.
+
+        System.out.println(" heap: " +printHeap());
+        System.out.println(" bubble-down: start");
+// proj 4
+/*
+bubble-down here
+*/
+        System.out.println(" bubble-down: end");
+        System.out.println(" new heap: " +printHeap());
+        return min;
+    }
     //use this method as is
     public String printHeap(){
         StringBuilder result = new StringBuilder("[");
