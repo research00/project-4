@@ -40,16 +40,16 @@ public class Heap211 {
         return heap.size() == 1;
     }
     void add(int value) {
-        int index = heap.size() - 1;
+        int index = heap.size();
         heap.add(value);
         System.out.println(" heap: " + printHeap());
         System.out.println(" bubble-up: start");
 
-        while(hasParent(index)) {
-            if(heap.get(parent(index)) < heap.get(index)) {
-                swap(index, parent(index));
+        while(hasParent(index) && index != 1 && heap.get(parent(index)) > heap.get(index)) {
+//            if(heap.get(parent(index)) < heap.get(index)) {
+                swap(parent(index), index);
                 index = parent(index);
-            }
+//            }
         }
 
         System.out.println(" bubble-up: end");

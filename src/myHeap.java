@@ -7,8 +7,9 @@ public class myHeap {
 
         Heap211 heap = new Heap211();
         heap.add(16);
-        heap.add(17);
+        heap.add(120);
         heap.add(1);
+        heap.add(20);
 
 //        System.out.println("Project 4. MinHeap (Spring 2023)");
 //// create an instance of Random class
