@@ -57,19 +57,31 @@ public class Heap211 {
     }
     int remove() {
         System.out.println(" heap: " +printHeap());
-// CP 16
 
         int min = peekMin(); // peek min value by calling peekMin()
-        heap.set(1 , heap.get(heap.size() - 1)); // move the last node to the first. tip: use one of the ArrayList methods
+        heap.set(1 , heap.get(heap.size()-1)); // move the last node to the first. tip: use one of the ArrayList methods
         System.out.println(" Removed: " + min);
-        heap.remove(heap.size() - 1); // delete the last node from the heap. The heap is reduced.
+        heap.remove(heap.size()-1); // delete the last node from the heap. The heap is reduced.
 
         System.out.println(" heap: " +printHeap());
         System.out.println(" bubble-down: start");
-// proj 4
+
 /*
 bubble-down here
 */
+        int index = 1;
+        while(index != heap.size()-1 || heap.get(index) > heap.get(leftChild(index)) || heap.get(index) > heap.get(rightChild(index))) {
+
+            if (hasLeftChild(index) && heap.get(leftChild(index)) < heap.get(index)) {
+                swap(index, leftChild(index));
+                index = leftChild(index);
+            }
+            if (hasLeftChild(index) && heap.get(rightChild(index)) < heap.get(index)) {
+                swap(index, rightChild(index));
+                index = rightChild(index);
+            }
+        }
+
         System.out.println(" bubble-down: end");
         System.out.println(" new heap: " +printHeap());
         return min;
