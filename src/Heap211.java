@@ -70,15 +70,46 @@ public class Heap211 {
 bubble-down here
 */
         int index = 1;
-        while(index != heap.size()-1 || heap.get(index) > heap.get(leftChild(index)) || heap.get(index) > heap.get(rightChild(index))) {
+//        while(index != heap.size()-1 &&( heap.get(index) > heap.get(leftChild(index)) || heap.get(index) > heap.get(rightChild(index)))) {
+//
+//            if (hasLeftChild(index) && hasRightChild(index)) {
+//
+//            }
+//
+//            if (hasLeftChild(index) && heap.get(leftChild(index)) < heap.get(index)) {
+//                swap(index, leftChild(index));
+//                index = leftChild(index);
+//            }
+//            if (hasLeftChild(index) && heap.get(rightChild(index)) < heap.get(index)) {
+//                swap(index, rightChild(index));
+//                index = rightChild(index);
+//            }
+//        }
 
-            if (hasLeftChild(index) && heap.get(leftChild(index)) < heap.get(index)) {
-                swap(index, leftChild(index));
-                index = leftChild(index);
+        while (hasLeftChild(index) || hasRightChild(index)) {
+            if (hasLeftChild(index) && hasRightChild(index)) {
+                if (heap.get(leftChild(index)) < heap.get(index) && heap.get(rightChild(index)) > heap.get(index)) {
+                    swap(index, leftChild(index));
+                    index = leftChild(index);
+                } else if (heap.get(leftChild(index)) > heap.get(index) && heap.get(rightChild(index)) < heap.get(index)) {
+                    swap(index, rightChild(index));
+                    index = rightChild(index);
+                } else if (heap.get(leftChild(index)) < heap.get(index) && heap.get(rightChild(index)) < heap.get(index)) {
+                    if (heap.get(leftChild(index)) < heap.get(rightChild(index))) {
+                        swap(index, leftChild(index));
+                        index = leftChild(index);
+                    } else {
+                        swap(index, rightChild(index));
+                        index = rightChild(index);
+                    }
+                }
+
             }
-            if (hasLeftChild(index) && heap.get(rightChild(index)) < heap.get(index)) {
-                swap(index, rightChild(index));
-                index = rightChild(index);
+            if (hasLeftChild(index) && !hasRightChild(index)) {
+                if (heap.get(leftChild(index)) < heap.get(index)) {
+                    swap(index, leftChild(index));
+                    index = leftChild(index);
+                }
             }
         }
 
