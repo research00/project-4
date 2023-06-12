@@ -37,7 +37,7 @@ public class myHeap {
                 } else {
                     System.out.println("Action " + test + ": Remove min");
                     // remove node to the heap by calling 'remove method' in Heap211 class.
-                    int min = heap.remove();
+                    heap.remove();
                     System.out.println();
                 }
             }
