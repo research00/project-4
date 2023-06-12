@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e200f554-38cc-458c-94bb-7541692a1eeb" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Heap211.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heap211.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/myHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myHeap.java" afterDir="false" />
     </list>
@@ -83,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686356596645</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1">
+      <created>1686541921766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686541921766</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -95,8 +101,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/myHeap.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="6" />
+          <line>17</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

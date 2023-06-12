@@ -110,6 +110,7 @@ bubble-down here
                     swap(index, leftChild(index));
                     index = leftChild(index);
                 }
+                break;
             }
         }
 

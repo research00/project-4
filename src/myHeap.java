@@ -12,6 +12,10 @@ public class myHeap {
         // create an instance of Heap211 class
         Heap211 heap = new Heap211();
 
+//        heap.add(24);
+//        heap.add(37);
+//        heap.add(24);
+//        heap.remove();
         for (int test = 1; test <= HOW_MANY_TESTs; test++) {
             //generate a random number to decide the action is 'add' or 'remove'
             int action = rand.nextInt(2);
